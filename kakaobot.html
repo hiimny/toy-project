@@ -2,7 +2,7 @@ var check = []
 let reset;
 function response(room, msg, sender, isGroupChat, replier, imageDB) {
 
-// 24시간 초기화
+// 24시간 출석 리스트 초기화
 var setTimeout,
     clearTimeout,
     setInterval,
@@ -34,7 +34,7 @@ var setTimeout,
 
     clearInterval = clearTimeout;
 
-// 출석 목록 만들기
+// 출첵 or ㅊㅊ 입력 하면 출석완료
 if(msg.trim()=="/출첵"||msg.trim()=="/ㅊㅊ") {
     let sw = "";
     sw += "*" + sender
@@ -42,6 +42,7 @@ if(msg.trim()=="/출첵"||msg.trim()=="/ㅊㅊ") {
     replier.reply(sw+"님 출첵 완료")
 }
 
+// 출석목록을 입력하면 지금까지 출석한 사람 리스트가 나옴
 if(msg.trim() == "/출석목록") {
     let list = "";
     for(var i = 0; i < check.length; i++) {
